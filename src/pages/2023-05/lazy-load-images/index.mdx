@@ -3,11 +3,11 @@ layout: "@layouts/BlogPost.astro"
 title: "Speed Up Your Site Instantly With Lazy Loaded Images - Advanced Lazy Loading"
 date: "2023-05-01"
 description: "Lazy loading images is one of the easiest ways to speed up your site, but there are a few advanced techniques you can use to make your lazy loading even better."
-tags: ["HTML", "CSS", "JavaScript"]
+tags: ["HTML", "CSS", "JavaScript", "abc"]
 ---
 
-import LazyLoadedImage from "@blogComponents/lazyLoadedImage/LazyLoadedImage.astro"
-import Tangent from "@blogComponents/lib/Tangent.astro"
+import LazyLoadedImage from "@blogComponents/lazyLoadedImage/LazyLoadedImage.astro";
+import Tangent from "@blogComponents/lib/Tangent.astro";
 
 <div style="display: flex; gap: 1rem; align-items: center;">
   <LazyLoadedImage isAlwaysLoading />
@@ -137,16 +137,16 @@ Now the only thing left to do is to fade in the full image once it is loaded. Th
 ```
 
 ```js
-const blurredImageDiv = document.querySelector(".blurred-img")
-const img = blurredImageDiv.querySelector("img")
+const blurredImageDiv = document.querySelector(".blurred-img");
+const img = blurredImageDiv.querySelector("img");
 function loaded() {
-  blurredImageDiv.classList.add("loaded")
+  blurredImageDiv.classList.add("loaded");
 }
 
 if (img.complete) {
-  loaded()
+  loaded();
 } else {
-  img.addEventListener("load", loaded)
+  img.addEventListener("load", loaded);
 }
 ```
 
