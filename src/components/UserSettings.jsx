@@ -45,7 +45,7 @@ export default function UserSettings() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
+    const timmer = setTimeout(() => {
       const iframesElm = document.getElementsByTagName('iframe');
 
       Array.from(iframesElm).forEach((elm) => {
@@ -56,6 +56,10 @@ export default function UserSettings() {
         });
       });
     }, 10000);
+
+    return () => {
+      clearTimeout(timmer);
+    };
   }, []);
 
   return (
