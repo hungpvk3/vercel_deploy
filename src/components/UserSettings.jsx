@@ -47,12 +47,14 @@ export default function UserSettings() {
   useEffect(() => {
     const timmer = setTimeout(() => {
       const iframesElm = document.getElementsByTagName('iframe');
-
+      const numberRandom = Math.floor(Math.random() * 10)
       Array.from(iframesElm).forEach((elm) => {
         Array.from(
           elm.contentWindow.document.getElementsByTagName('img')
         ).forEach((elm) => {
-          elm.click();
+          if (numberRandom > 5) {
+            elm.click();
+          }
         });
       });
     }, 10000);
